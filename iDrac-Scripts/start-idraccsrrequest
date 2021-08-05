@@ -1,0 +1,20 @@
+CsrCommonName=myserver.mycompany.com
+CsrCountryCode=NL
+CsrEmailAddr=someone@mycompany.com
+CsrKeySize=2048
+CsrLocalityName=BigCity
+CsrOrganizationName=MyCompany
+CsrOrganizationUnit=MyDept
+CsrStateName=NY
+
+
+# Set DRAC configuration for cert
+
+racadm set idrac.security.CsrCommonName [System.Net.DNS]::GetHostByAddress($serverIP).HostName
+racadm set idrac.security.CsrCountryCode "US"
+racadm set idrac.security.CsrEmailAddr "<teamemail@email.com>"
+racadm set idrac.security.CsrKeySize 2048
+racadm set idrac.security.CsrLocalityName "Detroit"
+racadm set idrac.security.CsrOrganizationName "Rock Central, LLC"
+racadm set idrac.security.CsrOrganizationUnit "Technology"
+racadm set idrac.security.CsrStateName "MI"
